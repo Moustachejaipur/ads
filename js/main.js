@@ -211,3 +211,39 @@
 
 
 })(jQuery);
+
+
+
+
+// Get modal element
+const modal = document.getElementById('modal');
+
+// Get close button
+const closeButton = document.querySelector('.close-btn');
+
+// Function to open the modal
+function openModal() {
+    modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Open modal when the page loads
+window.onload = function() {
+    openModal();
+}
+
+// Close modal when the close button is clicked
+closeButton.onclick = function() {
+    closeModal();
+}
+
+// Close modal if user clicks outside of the modal content
+window.onclick = function(event) {
+    if (event.target === modal) {
+        closeModal();
+    }
+}
